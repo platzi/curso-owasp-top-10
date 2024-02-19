@@ -12,9 +12,30 @@ module.exports = function (httpRequestsTotal, dbConfig) {
         }
 
         const db = new pg.Client(dbConfig);
-        try {
+        try { 
             await db.connect();
             console.log('Connected to database');
+
+            const role = await db.query(`
+            SELECT
+                r.role_name
+            FROM
+                roles r
+            JOIN
+                user_roles ur ON r.id = ur.role_id
+            WHERE
+                ur.user_id = $1;
+            `, [req.session.userId]);
+
+            console.log(`Database message: ${JSON.stringify(role)}`);
+            console.log(`Role name: ${role?.rows[0]?.role_name}`);
+            if (role?.rows[0]?.role_name !== 'admin') {
+                console.log('Unauthorized role');
+                res.status(401).json({error: 'Unauthorized'});
+                return;
+            }
+            console.log('Authorized role');
+
             const users = await db.query(`
             SELECT
                 u.id,
