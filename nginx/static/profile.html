@@ -39,10 +39,11 @@
                 <input name="email" type="email" placeholder="Email" />
                 <label for="phone">Phone</label>
                 <input name="phone" type="tel" placeholder="Phone" />
-                <label for="website">LinkedIn Profile</label>
-                <input name="website" type="text" placeholder="LinkedIn" />
+                <label for="website">LinkedIn username</label>
+                <input id="linkedin-input" name="website" type="text" placeholder="LinkedIn" />
+                <a id="linkedin-preview" href="#" target="_blank">linkedin.com/in/</a>
             </div>
-            <button type="submit">Update</button>
+            <button style="margin-top: 14px; width: 100%;" type="submit">Update</button>
         </form>
         <script>
             const profile = document.getElementById('profile');
@@ -52,6 +53,13 @@
             const coursesEl = document.getElementById('courses');
             const paymentsEl = document.getElementById('payments');
             const adminEl = document.getElementById('admin');
+            const linkedinInput = document.getElementById('linkedin-input');
+            const linkedinPreview = document.getElementById('linkedin-preview');
+
+            linkedinInput.addEventListener('input', () => {
+                linkedinPreview.innerText = `linkedin.com/in/${linkedinInput.value}`
+                linkedinPreview.href = `https://linkedin.com/in/${linkedinInput.value}`;
+            });
 
             // if click on error or success message, hide it
             errorEl.addEventListener('click', () => {
@@ -103,6 +111,8 @@
                 profile.email.value = email;
                 profile.phone.value = phone;
                 profile.website.value = website;
+                linkedinPreview.innerText = `linkedin.com/in/${website}`;
+                linkedinPreview.href = `https://linkedin.com/in/${website}`;
                 console.log('User data fetched and populated form');
             };
             fetchUserData();
