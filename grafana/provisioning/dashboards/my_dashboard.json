@@ -1,0 +1,151 @@
+{
+  "id": null,
+  "uid": "c5d46b3a-bd54-4444-bd05-722b5db976d4",
+  "title": "My Dashboard",
+  "tags": ["webapp"],
+  "timezone": "browser",
+  "editable": true,
+  "refresh": "1s",
+  "time": {
+    "from": "now-5m",
+    "to": "now"
+  },
+  "panels": [
+    {
+      "title": "HTTP Requests",
+      "type": "timeseries",
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "display": "s"
+          }
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "expr": "sum(rate(http_requests_total[1m]))",
+          "legendFormat": "Requests",
+          "interval": "1s"
+        }
+      ],
+      "id": 1,
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 24,
+        "h": 12
+      }
+    },
+    {
+      "title": "Login Success",
+      "type": "timeseries",
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "display": "s"
+          }
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "expr": "sum(rate(http_requests_total{endpoint=\"login\",status_code=\"200\"}[1m]))",
+          "legendFormat": "Requests",
+          "interval": "1s"
+        }
+      ],
+      "id": 2,
+      "gridPos": {
+        "x": 0,
+        "y": 24,
+        "w": 12,
+        "h": 6
+      }
+    },{
+      "title": "Login Failures",
+      "type": "timeseries",
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "display": "s"
+          }
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "expr": "sum(rate(http_requests_total{endpoint=\"login\",status_code=~\"400|401|500\"}[1m]))",
+          "legendFormat": "Requests",
+          "interval": "1s"
+        }
+      ],
+      "id": 3,
+      "gridPos": {
+        "x": 12,
+        "y": 24,
+        "w": 12,
+        "h": 6
+      }
+    },
+    {
+      "title": "Login Rate Limit",
+      "type": "timeseries",
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "display": "s"
+          }
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "expr": "sum(rate(http_requests_total{endpoint=\"auth\",status_code=~\"429\"}[1m]))",
+          "legendFormat": "Requests",
+          "interval": "1s"
+        }
+      ],
+      "id": 4,
+      "gridPos": {
+        "x": 0,
+        "y": 36,
+        "w": 24,
+        "h": 12
+      }
+    },
+    {
+      "title": "CPU Usage",
+      "type": "timeseries",
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "display": "s"
+          }
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "expr": "100 - (avg by (instance) (irate(process_cpu_seconds_total[1m])) * 100)",
+          "legendFormat": "CPU Usage",
+          "interval": "1s"
+        }
+      ],
+      "id": 4,
+      "gridPos": {
+        "x": 0,
+        "y": 48,
+        "w": 24,
+        "h": 12
+      }
+    }
+  ],
+  "schemaVersion": 21,
+  "version": 1
+}

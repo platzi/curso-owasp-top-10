@@ -1,0 +1,1 @@
+console.log(`%c Malicious library content`, 'font-weight:bold; font-size: 24px; color: red;');

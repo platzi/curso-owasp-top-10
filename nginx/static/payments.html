@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User payments</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a id="profile" href="/profile">Profile</a>
+        <a id="logout" href="/logout">Logout</a>
+    </nav>
+    <h1>Payments</h1>
+    <p>Here you can view your payments.</p>
+    <div id="payments"></div>
+    <script>
+        const paymentsEl = document.getElementById('payments');
+
+        // read userId from url query
+        const urlParams = new URLSearchParams(window.location.search);
+        const userId = urlParams.get('userId');
+
+        // human readable date
+        const formatDate = (date) => {
+            const d = new Date(date);
+            return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+        };
+
+        // fetch payments and populate list
+        fetch(`/api/users/${userId}/payments`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(`Payments data: ${JSON.stringify(data)}`);
+            paymentsEl.innerHTML = data.map(payment => `
+                <div style="margin-bottom: 24px; border: 1px; border-radius: 8px;">
+                    <p>ID: ${payment.id}</p>
+                    <p>Date: ${formatDate(payment.date)}</p>
+                    <p>Amount: $${payment.amount}</p>
+                </div>
+            `).join('');
+            console.log('Payments data fetched and populated list');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            paymentsEl.innerText = 'Error: ' + error;
+        });
+    </script>
+</body>
+</html>

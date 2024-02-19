@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/profile">Profile</a>
+    </nav>
+    <h1>Admin</h1>
+    <div>
+        <p>Here you can manage the platform.</p>
+        <p>Feel free to explore the platform and manage different things.</p>
+        <p>Happy Managing!</p>
+    </div>
+    <p id="error"></p>
+    <div id="users"></div>
+    <script>
+        const usersEl = document.getElementById('users');
+        const errorEl = document.getElementById('error');
+
+        errorEl.addEventListener('click', () => {
+            errorEl.innerText = '';
+        });
+
+        // fetch users and populate list
+        const fetchUsers = async () => {
+            console.log('Fetching users...');
+            console.log(`Cookies: ${document.cookie}`);
+            const session = document.cookie.split(';').find(c => {
+                console.log(`Cookie: ${c}`);
+                return c.includes('main_session');
+            });
+            console.log(`Session: ${session}`);
+
+            if (!session) {
+                // redirect to logout
+                window.location.href = '/logout';
+            }
+
+            fetch('/api/users', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Cookie': session
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Users fetched');
+                    return response.json();
+                } else {
+                    console.log('Users fetch failed');
+                    throw new Error('Users fetch failed');
+                }
+            })
+            .then(users => {
+                console.log('Users:', users);
+                users.forEach(user => {
+                    const div = document.createElement('div');
+                    /*
+                        show as div fields: userId, username, first_name, last_name, email, phone, website
+                        show as link actions: payments and courses
+                    */
+                    div.innerHTML = `
+                        <div style="margin-bottom: 24px; border: 1px; border-radius: 8px;">
+                            <div>
+                                <p>Username: ${user.username}</p>
+                                <p>First name: ${user.first_name}</p>
+                                <p>Last name: ${user.last_name}</p>
+                                <p>Email: ${user.email}</p>
+                                <p>Phone: ${user.phone}</p>
+                                <p>LinkedIn: ${user.website}</p>
+                            </div>
+                            <div>
+                                <a href="/payments/${user.id}">Payments</a>
+                                <a href="/courses/${user.id}">Courses</a>
+                            </div>
+                        </div>
+                    `;
+                    usersEl.appendChild(div);
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                errorEl.innerText = error;
+            });
+        };
+
+        fetchUsers();
+    </script>
+</body>
+</html>

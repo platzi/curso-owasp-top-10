@@ -1,0 +1,13 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+rule_files:
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+    - targets: ['backend:8080']
+    scheme: http
+    metrics_path: '/metrics'
+    basic_auth:
+      username: 'admin'
+      password: 'admin'

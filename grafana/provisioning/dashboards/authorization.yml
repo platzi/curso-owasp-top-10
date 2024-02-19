@@ -1,0 +1,17 @@
+apiVersion: 1
+
+org_name: 'Main Org.'
+org_address: ''
+org_id: 1
+
+# Configuración de roles
+roles:
+  - name: 'editor'
+    permissions: ['read', 'write']
+
+# Configuración de usuarios y asignación de roles
+users:
+  - username: 'admin'
+    password: 'admin'
+    email: 'admin@admin.com'
+    role: 'editor'

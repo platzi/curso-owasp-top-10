@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+</head>
+<body>
+    <script>
+        // fetch logout and redirect to login
+        fetch('/api/logout')
+        .then(response => {
+            if (response.ok) {
+                console.log('Logout successful');
+                window.location = '/login';
+            } else {
+                console.log('Logout failed');
+            }
+        });
+    </script>
+</body>
+</html>

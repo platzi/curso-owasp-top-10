@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course View</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a id="profile" href="/profile">Profile</a>
+        <a id="logout" href="/logout">Logout</a>
+        <a id="login" href="/login">Login</a>
+    </nav>
+    <div id="course"></div>
+    <script>
+        const courseEl = document.getElementById('course');
+        const loginEl = document.getElementById('login');
+        const profileEl = document.getElementById('profile');
+        const logoutEl = document.getElementById('logout');
+
+        // if user is logged in, show profile link and hide login link
+        if (document.cookie.includes('main_session')) {
+            loginEl.style.display = 'none';
+        } else {
+            profileEl.style.display = 'none';
+            logoutEl.style.display = 'none';
+        }
+
+        // read courseId from url query
+        const urlParams = new URLSearchParams(window.location.search);
+        const courseId = urlParams.get('courseId');
+
+        // fetch course and populate list
+        fetch(`/api/courses/${courseId}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(async (data) => {
+            console.log(`Course data: ${JSON.stringify(data)}`);
+            const authorId = data.author_id;
+            const author = await fetch(`/api/authors?datasource=https://dummyjson.com/users/${authorId}`).then(res => res.json());
+
+            courseEl.innerHTML = `
+                <h1>${data.course_name}</h1>
+                <p>${data.course_code}</p>
+                <p>${data.course_description}</p>
+                <p>About the author</p>
+                <img src="${author.image}" alt="${author.name}" width="100" height="100">
+                <p>${author.firstName} ${author.lastName}</p>
+                <p>${author.email}</p>
+            `;
+            console.log('Course data fetched and populated list');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            courseEl.innerText = 'Error: ' + error;
+        });
+    </script>
+</body>
+</html>

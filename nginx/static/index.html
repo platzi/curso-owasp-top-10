@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Platform</title>
+</head>
+<body>
+    <nav>
+        <a href="/about">About</a>
+        <a id="profile" href="/profile">Profile</a>
+        <a id="logout" href="/logout">Logout</a>
+        <a id="login" href="/login">Login</a>
+    </nav>
+    <h1>Learning Platform</h1>
+    <p>Welcome to the learning platform. This is a simple platform to learn and practice different programming languages and frameworks.</p>
+    <p>Feel free to explore the platform and learn new things.</p>
+    <p>Happy Learning!</p>
+    <h2>Courses</h2>
+    <div id="courses"></div>
+    <script>
+        const coursesEl = document.getElementById('courses');
+        const loginEl = document.getElementById('login');
+        const profileEl = document.getElementById('profile');
+        const logoutEl = document.getElementById('logout');
+
+        // if user is logged in, show profile link and hide login link
+        if (document.cookie.includes('main_session')) {
+            loginEl.style.display = 'none';
+        } else {
+            profileEl.style.display = 'none';
+            logoutEl.style.display = 'none';
+        }
+
+        // fetch courses and populate list
+        fetch('/api/courses', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(`Courses data: ${JSON.stringify(data)}`);
+            coursesEl.innerHTML = data.map(course => `
+                <div style="margin-bottom: 24px; border: 1px; border-radius: 8px;">
+                    <p>${course.course_name} - #${course.course_code}</p>
+                    <p>${course.course_description}</p>
+                    <a href="/course?courseId=${course.id}">View course</a>
+                </div>
+            `).join('');
+            console.log('Courses data fetched and populated list');
+        })
+    </script>
+    <script type="text/javascript" src="https://localbox/cdn/library.js"></script>
+</body>
+</html>

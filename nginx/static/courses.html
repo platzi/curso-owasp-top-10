@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Courses</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a id="profile" href="/profile">Profile</a>
+        <a id="logout" href="/logout">Logout</a>
+    </nav>
+    <h1>Courses</h1>
+    <p>Here you can view your courses.</p>
+    <div id="courses"></div>
+    <script>
+        const coursesEl = document.getElementById('courses');
+
+        // read userId from url query
+        const urlParams = new URLSearchParams(window.location.search);
+        const userId = urlParams.get('userId');
+
+        // fetch courses and populate list
+        fetch(`/api/users/${userId}/courses`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(`Courses data: ${JSON.stringify(data)}`);
+            coursesEl.innerHTML = data.map(course => `
+                <div style="margin-bottom: 24px; border: 1px; border-radius: 8px;">
+                    <p>ID: ${course.id}</p>
+                    <p>Name: ${course.course_name}</p>
+                    <p>Description: ${course.course_description}</p>
+                    <p>Code: ${course.course_code}</p>
+                </div>
+            `).join('');
+            console.log('Courses data fetched and populated list');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            coursesEl.innerText = 'Error: ' + error;
+        });
+    </script>
+</body>
+</html>

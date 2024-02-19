@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+    </nav>
+    <div>
+        <p id="error" style="color: red;"></p>
+    </div>
+    <form id="loginForm">
+        <legend>Iniciar Sesión</legend>
+        <input type="text" id="username" />
+        <input type="password" id="password" />
+        <button type="submit">Iniciar Sesión</button>
+    </form>
+    <script>
+        const loginEl = document.getElementById('loginForm');
+        const errorEl = document.getElementById('error');
+
+        errorEl.addEventListener('click', () => {
+            errorEl.innerText = '';
+        });
+
+        loginEl.addEventListener('submit', (e) => {
+            e.preventDefault();
+            document.getElementById('error').innerText = '';
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            console.log('Username:', username);
+            console.log('Password:', password);
+
+            fetch('/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username,
+                    password
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Login successful');
+                    window.location = '/profile';
+                } else {
+                    console.log('Login failed');
+                    document.getElementById('error').innerText = 'Login failed';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('error').innerText = 'Error: ' + error;
+            });
+        });
+    </script>
+</body>
+</html>

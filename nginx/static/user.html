@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+</head>
+<body>
+    <div id="user"></div>
+    <script>
+        const user = document.getElementById('user');
+
+        // read userId from url
+        const url = new URL(window.location.href);
+        const userId = url.searchParams.get('userId');
+
+        // get user data from the server
+        fetch(`/api/users/${userId}`)
+            .then(response => response.json())
+            .then(data => {
+                user.innerHTML = `
+                    <img style="width: 120px;height: 120px; border-radius: 50%; object-fit: cover;" src="/files/${data.username}.jpg" alt="Profile picture" />
+                    <h3>${data.first_name} ${data.last_name}</h3>
+                    <p>About me</p>
+                    <p>${data.bio}</p>
+                    <p>Email: ${data.email}</p>
+                    <p>Phone: ${data.phone}</p>
+                    <p>Follow me <a href="${data.website}" target="_blank" noreferer noopener>${data.website}</a></p>
+                `;
+            })
+            .catch(error => {
+                // unknown user
+                user.innerHTML = `<p style="color: red;">User not found</p>`;
+            });
+    </script>
+</body>
+</html>

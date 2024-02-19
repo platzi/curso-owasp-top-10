@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body>
+    <div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a id="admin" href="/admin">Admin</a>
+            <a id="courses" href="#">Courses</a>
+            <a id="payments" href="#">Payments</a>
+            <a href="/logout">Logout</a>
+        </nav>
+        <h3>Profile</h3>
+        <p>Welcome to your profile. Here you can view and update your profile information.</p>
+        <div>
+            <!-- show error or update success -->
+            <p id="error" style="color: red;"></p>
+            <p id="success" style="color: green;"></p>
+        </div>
+        <form id="profile" style="max-width: 220px;">
+            <div>
+                <img style="width: 120px;height: 120px; border-radius: 50%; object-fit: cover;" id="profile-picture" alt="Profile picture" />
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                <label for="username">Username</label>
+                <input name="username" type="text" placeholder="Username" />
+                <label for="bio">Bio</label>
+                <textarea name="bio" placeholder="Bio" rows="4"></textarea>
+                <label for="first_name">First name</label>
+                <input name="first_name" type="text" placeholder="First name" />
+                <label for="last_name">Last name</label>
+                <input name="last_name" type="text" placeholder="Last name" />
+                <label for="email">Email</label>
+                <input name="email" type="email" placeholder="Email" />
+                <label for="phone">Phone</label>
+                <input name="phone" type="tel" placeholder="Phone" />
+                <label for="website">LinkedIn Profile</label>
+                <input name="website" type="text" placeholder="LinkedIn" />
+            </div>
+            <button type="submit">Update</button>
+        </form>
+        <script>
+            const profile = document.getElementById('profile');
+            const profilePicture = document.getElementById('profile-picture');
+            const errorEl = document.getElementById('error');
+            const successEl = document.getElementById('success');
+            const coursesEl = document.getElementById('courses');
+            const paymentsEl = document.getElementById('payments');
+            const adminEl = document.getElementById('admin');
+
+            // if click on error or success message, hide it
+            errorEl.addEventListener('click', () => {
+                errorEl.innerText = '';
+            });
+
+            successEl.addEventListener('click', () => {
+                successEl.innerText = '';
+            });
+
+            // fetch user data and populate form
+            const fetchUserData =  async () => {
+                console.log('Fetching user data...');
+                console.log(`Cookies: ${document.cookie}`);
+                const session = document.cookie.split(';').find(c => {
+                    console.log(`Cookie: ${c}`);
+                    return c.includes('main_session');
+                });
+                console.log(`Session: ${session}`);
+
+                // if session is undefined, redirect to logout
+                if (!session) {
+                    window.location.href = '/logout';
+                }
+
+                const sessionData = atob(decodeURIComponent(session.split('=')[1]));
+                console.log(`Session data: ${sessionData}`);
+                const { userId, role } = JSON.parse(sessionData);
+                console.log(`User ID: ${userId}`);
+                console.log(`Role: ${role}`);
+
+                if (role !== 'admin') {
+                    adminEl.style.display = 'none';
+                }
+
+                coursesEl.href = `/courses?userId=${userId}`;
+                paymentsEl.href = `/payments?userId=${userId}`;
+
+                const response = await fetch(`/api/users/${userId}`);
+                const data = await response.json();
+                console.log(`User data: ${JSON.stringify(data)}`);
+
+                const { username, bio, first_name, last_name, email, phone, website } = data;
+                profilePicture.src = `/files/${username}.jpg`;
+                profile.username.value = username;
+                profile.bio.value = bio;
+                profile.first_name.value = first_name;
+                profile.last_name.value = last_name;
+                profile.email.value = email;
+                profile.phone.value = phone;
+                profile.website.value = website;
+                console.log('User data fetched and populated form');
+            };
+            fetchUserData();
+
+            profile.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                errorEl.innerText = '';
+                successEl.innerText = '';
+
+                const session = document.cookie.split(';').find(c => c.includes('main_session'));
+                const sessionData = atob(decodeURIComponent(session.split('=')[1]));
+                const { userId } = JSON.parse(sessionData);
+
+                console.log(`User ID: ${userId}`);
+
+                const formData = new FormData(profile);
+                const formDataObject = Object.fromEntries(formData);
+                console.log(`Form data: ${JSON.stringify(formDataObject)}`);
+
+                fetch(`/api/users/${userId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formDataObject)
+                })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Update successful');
+                        successEl.innerText = 'Update successful';
+                    } else {
+                        console.log('Update failed');
+                        errorEl.innerText = 'Update failed';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    errorEl.innerText = 'Error: ' + error;
+                });
+            });
+        </script>
+        <style>
+            input {
+                margin-bottom: 8px;
+            }
+        </style>
+    </div>
+</body>
+</html>
