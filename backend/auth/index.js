@@ -1,10 +1,19 @@
 const express = require('express');
+const expressRateLimit = require('express-rate-limit');
 const { createHash } = require('crypto');
 const { v4: uuidv4 } = require('uuid');
 const pg = require('pg');
 const router = express.Router();
 
+const limiter = expressRateLimit({
+    windowMs: 1000 * 60 * 60 * 24, // 1 day
+    max: 5, // limit each IP to 5 requests per windowMs
+    message: 'Too many requests from this IP, please try again after 24 hours'
+});
+
 module.exports = function (httpRequestsTotal, dbConfig) {
+    router.use(limiter);
+
     router.post('/login', async (req, res) => {
         const { username, password } = req.body;
         console.log(`Username and password: ${username} ${password}`);
