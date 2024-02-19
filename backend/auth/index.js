@@ -12,9 +12,17 @@ const limiter = expressRateLimit({
 });
 
 module.exports = function (httpRequestsTotal, dbConfig) {
-    router.use(limiter);
+    const limiter = expressRateLimit({
+        windowMs: 1000 * 60 * 60 * 24, // 1 day
+        max: 5, // limit each IP to 5 requests per windowMs
+        handler: (req, res) => {
+            console.log(`Too many requests from this IP: ${req.ip}`);
+            httpRequestsTotal.inc({ endpoint: 'auth', method: req.method, status_code: '429'});
+            res.status(429).json({error: 'Too many requests from this IP, please try again after 24 hours'});
+        }
+    });
 
-    router.post('/login', async (req, res) => {
+    router.post('/login', limiter, async (req, res) => {
         const { username, password } = req.body;
         console.log(`Username and password: ${username} ${password}`);
         if (!username || !password) {

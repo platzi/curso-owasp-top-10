@@ -5,7 +5,7 @@
   "tags": ["webapp"],
   "timezone": "browser",
   "editable": true,
-  "refresh": "1s",
+  "refresh": "5s",
   "time": {
     "from": "now-5m",
     "to": "now"
@@ -25,8 +25,8 @@
       },
       "targets": [
         {
-          "expr": "sum(rate(http_requests_total[1m]))",
-          "legendFormat": "Requests",
+          "expr": "rate(http_requests_total[10s])",
+          "legendFormat": "{{method}} {{endpoint}} {{status_code}}",
           "interval": "1s"
         }
       ],
@@ -52,8 +52,8 @@
       },
       "targets": [
         {
-          "expr": "sum(rate(http_requests_total{endpoint=\"login\",status_code=\"200\"}[1m]))",
-          "legendFormat": "Requests",
+          "expr": "rate(http_requests_total{endpoint=\"login\",status_code=\"200\"}[10s])",
+          "legendFormat": "{{method}} {{status_code}}",
           "interval": "1s"
         }
       ],
@@ -78,8 +78,8 @@
       },
       "targets": [
         {
-          "expr": "sum(rate(http_requests_total{endpoint=\"login\",status_code=~\"400|401|500\"}[1m]))",
-          "legendFormat": "Requests",
+          "expr": "rate(http_requests_total{endpoint=\"login\",status_code=~\"400|401|500\"}[10s])",
+          "legendFormat": "{{method}} {{status_code}}",
           "interval": "1s"
         }
       ],
@@ -105,8 +105,8 @@
       },
       "targets": [
         {
-          "expr": "sum(rate(http_requests_total{endpoint=\"auth\",status_code=~\"429\"}[1m]))",
-          "legendFormat": "Requests",
+          "expr": "rate(http_requests_total{endpoint=\"auth\",status_code=\"429\"}[10s])",
+          "legendFormat": "{{method}} {{status_code}}",
           "interval": "1s"
         }
       ],
