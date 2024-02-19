@@ -103,10 +103,10 @@ module.exports = function (httpRequestsTotal, dbConfig) {
             UPDATE
                 users u
             SET
-                username = '${username}'
+                username = $1
             WHERE
-                u.id = ${userId};
-            `);
+                u.id = $2;
+            `, [username, userId]);
             console.log(`User rows: ${JSON.stringify(user)}`);
 
             const profile = await db.query(`
