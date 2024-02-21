@@ -117,6 +117,29 @@ Aquí te comparto una lista de tutoriales para instalar tus herramientas de pent
 
 [Tutorial de instalación de DirBuster](https://platzi.com/blog/como-instalar-dirbuster)
 
+## Retos
+A continuación puedes encontrar la documentación de los 10 retos del proyecto relacionados al OWASP Top 10.
+
+[A01:2021 - Broken Access Control](docs/A01-BrokenAccessControl.md)
+
+[A02:2021 - Cryptographic Failures](docs/A02-CryptographicFailures.md)
+
+[A03:2021 - Injection](docs/A03-Injection.md)
+
+[A04:2021 - Insecure Design](docs/A04-InsecureDesign.md)
+
+[A05:2021 - Security Misconfiguration](docs/A05-SecurityMisconfiguration.md)
+
+[A06:2021 - Vulnerable And Outdated Components](docs/A06-VulnerableAndOutdatedComponents.md)
+
+[A07:2021 - Identification And Authentication Failures](docs/A07-IdentificationAndAuthenticationFailures.md)
+
+[A08:2021 - Software And Data Integrity Failures](docs/A08-SoftwareAndDataIntegrityFailures.md)
+
+[A09:2021 - Security Logging And Monitoring Failures](docs/A09-SecurityLoggingAndMonitoringFailures.md)
+
+[A10:2021 - Server-Side Request Forgery](docs/A10-ServerSideRequestForgery.md)
+
 ## Recursos adicionales
 ### Acceso a grafana
 Para acceder a las métricas en grafana puedes seguir los siguientes pasos:
