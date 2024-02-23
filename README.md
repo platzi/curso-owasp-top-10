@@ -207,6 +207,7 @@ La aplicación tiene un usuario administrador y cuatro usuarios comunes, estas s
 
 #### Happy Hunting!
 Ha llegado el momento de poner manos a la obra y realizar tus prácticas.
+
 ![Hacker Cat](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXR4Z29zeDZ1cGdxMm8yaWk0ZHJudnUzenQwMjEybWl1aWU4d3M5ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/o0vwzuFwCGAFO/giphy.gif)
 
 ## Créditos
