@@ -117,6 +117,8 @@ git checkout solved
 ## Comandos de docker
 Aquí te van algunos comandos útiles para utilizar el proyecto durante las prácticas.
 
+Recuerda que para los siguientes comandos, debes encontrarte en el directrio del proyecto, en el mismo lugar que el archivo `docker-compose.yml`.
+
 Ejecutar el proyecto
 ```sh
 docker compose up --build
