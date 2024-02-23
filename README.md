@@ -113,7 +113,11 @@ Aquí te comparto una lista de tutoriales para instalar tus herramientas de pent
 
 [Tutorial de instalación de Docker](https://platzi.com/new-home/clases/8781-docker-fundamentos/66589-instalacion-de-docker/)
 
-[Tutorial de instalación de Burp Suite](https://platzi.com/blog/como-instalar-burp-suite-en-linux)
+[Tutorial de instalación de Burp Suite en Windows](https://platzi.com/blog/como-instalar-burp-suite-en-windows)
+
+[Tutorial de instalación de Burp Suite en Linux](https://platzi.com/blog/como-instalar-burp-suite-en-linux)
+
+[Tutorial de instalación de Burp Suite en MacOS](https://platzi.com/blog/como-instalar-burp-suite-en-macos)
 
 [Tutorial de instalación de DirBuster](https://platzi.com/blog/como-instalar-dirbuster)
 
