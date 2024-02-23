@@ -1,16 +1,10 @@
 # Curso de OWASP Top 10: Vulnerabilidades en Aplicaciones
-## Proyecto de Aplicación Web Vulnerable al OWASP Top 10:2021
-Esta es la documentación del proyecto de aplicación vulnerable para el Curso de OWASP Top 10: Vulnerabilidades en Aplicaciones de Platzi.
-
+## Introducción
+Esta es la documentación del proyecto de aplicación vulnerable para el Curso de OWASP Top 10: Riesgos en Aplicaciones de Platzi.
 A continuación encontrarás toda la información necesaria para utilizar este proyecto.
 
-## Pasos de instalación
-1) Clonar el repositorio
-2) Agregar alias localbox al localhost
-3) Agregar certificado CA al navegador
-
 ## Índice
-1. [Curso de OWASP Top 10: Vulnerabilidades en Aplicaciones](#curso-de-owasp-top-10-vulnerabilidades-en-aplicaciones)
+1. [Introducción](#curso-de-owasp-top-10-vulnerabilidades-en-aplicaciones)
 2. [Pasos de instalación](#pasos-de-instalación)
     1. [Paso 1: Clonar el repositorio](#paso-1-clonar-el-repositorio)
     2. [Paso 2: Agregar el alias localbox a tu localhost](#paso-2-agrega-el-alias-localbox-a-tu-localhost)
@@ -23,6 +17,11 @@ A continuación encontrarás toda la información necesaria para utilizar este p
     - [Acceso a grafana](#acceso-a-grafana)
     - [Usuarios de la aplicación](#usuarios-de-la-aplicación)
 7. [Créditos](#créditos)
+
+## Pasos de instalación
+1) Clonar el repositorio
+2) Agregar alias localbox al localhost
+3) Agregar certificado CA al navegador
 
 ### Paso 1: Clonar el repositorio
 Para clonar el repositorio simplemente muevete a tu directorio de trabajo en la terminal y ejecuta el comando.
@@ -212,4 +211,4 @@ Ha llegado el momento de poner manos a la obra y realizar tus prácticas.
 ## Créditos
 Proyecto creado por [Diana Nerd](https://dnrd.dev).
 
-Para el [Curso de OWASP Top 10: Vulnerabilidades en Aplicaciones](https://platzi.com/cursos/owasp-top-10) en [Platzi](https://platzi.com/ciberseguridad).
+Para el [Curso de OWASP Top 10: Riesgos en Aplicaciones](https://platzi.com/cursos/owasp-top-10) en [Platzi](https://platzi.com/ciberseguridad).
