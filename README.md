@@ -68,7 +68,7 @@ Para poder utilizar los certificados SSL del proyecto sin ninguna alerta o error
 <summary>Agregar el certificado en Chrome</summary>
     1. Abre Chrome y ve a la configuración haciendo clic en el icono de tres puntos en la esquina superior derecha.</br>
     2. En el menú desplegable, selecciona "Configuración".</br>
-    3. En la sección "Privacidad y seguridad", haz clic en "Securidad".</br>
+    3. En la sección "Privacidad y seguridad", haz clic en "Seguridad".</br>
     4. Desplázate hacia abajo hasta encontrar la sección "Certificados" y haz clic en "Administrar certificados".</br>
     5. En la ventana que se abre, selecciona la pestaña "Autoridades", luego haz clic en "Importar" y sigue el asistente de importación para seleccionar el archivo `RootCA.crt` y agregarlo como una Autoridad de Certificación de Confianza.
 </details>
