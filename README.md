@@ -14,7 +14,7 @@ A continuación encontrarás toda la información necesaria para utilizar este p
 1. [Curso de OWASP Top 10: Vulnerabilidades en Aplicaciones](#curso-de-owasp-top-10-vulnerabilidades-en-aplicaciones)
 2. [Pasos de instalación](#pasos-de-instalación)
     1. [Paso 1: Clonar el repositorio](#paso-1-clonar-el-repositorio)
-    2. [Paso 2: Agregar el alias localbox a tu localhost](#paso-2-agregar-el-alias-localbox-a-tu-localhost)
+    2. [Paso 2: Agregar el alias localbox a tu localhost](#paso-2-agrega-el-alias-localbox-a-tu-localhost)
         - [Agregar el alias en sistemas tipo UNIX (MacOS y Linux)](#agregar-el-alias-en-sistemas-tipo-unix-macos-y-linux)
         - [Agregar el alias en Windows](#agregar-el-alias-en-windows)
         - [Resultado final](#resultado-final)
