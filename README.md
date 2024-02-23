@@ -18,11 +18,10 @@ A continuación encontrarás toda la información necesaria para utilizar este p
 3. [Uso del repositorio](#uso-del-repositorio)
 4. [Comandos de docker](#comandos-de-docker)
 5. [Software de trabajo](#software-de-trabajo)
-6. [Retos](#retos)
-7. [Recursos adicionales](#recursos-adicionales)
+6. [Recursos adicionales](#recursos-adicionales)
     - [Acceso a grafana](#acceso-a-grafana)
     - [Usuarios de la aplicación](#usuarios-de-la-aplicación)
-8. [Créditos](#créditos)
+7. [Créditos](#créditos)
 
 ### Paso 1: Clonar el repositorio
 Para clonar el repositorio simplemente muevete a tu directorio de trabajo en la terminal y ejecuta el comando.
@@ -164,30 +163,21 @@ Recuerda terminar el proceso de docker y elimines los volúmenes cada vez que ca
     <a href="https://platzi.com/blog/como-instalar-dirbuster" target="_blank">Tutorial de instalación de DirBuster</a>
 </details>
 
-## Retos
-A continuación puedes encontrar las clases de los 10 retos del proyecto relacionados al OWASP Top 10.
-
-[A01:2021 - Broken Access Control](https://platzi.com/clases/9342-owasp-top-10/68372-broken-access-control/)
-
-[A02:2021 - Cryptographic Failures](https://platzi.com/clases/9342-owasp-top-10/68373-cryptographic-failures/)
-
-[A03:2021 - Injection](https://platzi.com/clases/9342-owasp-top-10/68374-injection/)
-
-[A04:2021 - Insecure Design](https://platzi.com/clases/9342-owasp-top-10/68375-insecure-design/)
-
-[A05:2021 - Security Misconfiguration](https://platzi.com/clases/9342-owasp-top-10/68376-security-misconfiguration/)
-
-[A06:2021 - Vulnerable And Outdated Components](https://platzi.com/clases/9342-owasp-top-10/68377-vulnerable-and-outdated-components/)
-
-[A07:2021 - Identification And Authentication Failures](https://platzi.com/clases/9342-owasp-top-10/68378-identification-and-authentication-failures/)
-
-[A08:2021 - Software And Data Integrity Failures](https://platzi.com/clases/9342-owasp-top-10/68368-software-and-data-integrity-failures/)
-
-[A09:2021 - Security Logging And Monitoring Failures](https://platzi.com/clases/9342-owasp-top-10/68369-security-logging-and-monitoring-failures/)
-
-[A10:2021 - Server-Side Request Forgery](https://platzi.com/clases/9342-owasp-top-10/68370-server-side-request-forgery/)
-
 ## Recursos adicionales
+<details>
+    <summary>A continuación puedes encontrar las clases de los 10 retos del proyecto relacionados al OWASP Top 10.</summary>
+    <a href="https://platzi.com/clases/9342-owasp-top-10/68372-broken-access-control/" target="_blank">A01:2021 - Broken Access Control</a></br>
+    <a href="https://platzi.com/clases/9342-owasp-top-10/68373-cryptographic-failures/" target="_blank">A02:2021 - Cryptographic Failures</a></br>
+    <a href="https://platzi.com/clases/9342-owasp-top-10/68374-injection/" target="_blank">A03:2021 - Injection</a></br>
+    <a href="https://platzi.com/clases/9342-owasp-top-10/68375-insecure-design/" target="_blank">A04:2021 - Insecure Design</a></br>
+    <a href="https://platzi.com/clases/9342-owasp-top-10/68376-security-misconfiguration/" target="_blank">A05:2021 - Security Misconfiguration</a></br>
+    <a href="https://platzi.com/clases/9342-owasp-top-10/68377-vulnerable-and-outdated-components/" target="_blank">A06:2021 - Vulnerable And Outdated Components</a></br>
+    <a href="https://platzi.com/clases/9342-owasp-top-10/68378-identification-and-authentication-failures/" target="_blank">A07:2021 - Identification And Authentication Failures</a></br>
+    <a href="https://platzi.com/clases/9342-owasp-top-10/68368-software-and-data-integrity-failures/" target="_blank">A08:2021 - Software And Data Integrity Failures</a></br>
+    <a href="https://platzi.com/clases/9342-owasp-top-10/68369-security-logging-and-monitoring-failures/" target="_blank">A09:2021 - Security Logging And Monitoring Failures</a></br>
+    <a href="https://platzi.com/clases/9342-owasp-top-10/68370-server-side-request-forgery/" target="_blank">A10:2021 - Server-Side Request Forgery</a></br>
+</details>
+
 ### Acceso a grafana
 Para acceder a las métricas en grafana puedes seguir los siguientes pasos:
 1) Entra a [https://localbox/grafana](https://localbox/grafana)
