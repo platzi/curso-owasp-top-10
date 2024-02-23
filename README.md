@@ -94,9 +94,9 @@ Para poder utilizar los certificados SSL del proyecto sin ninguna alerta o error
 </details>
 
 ## Uso del repositorio
-Usa la rama `main` para ver la versión vulnerable del proyecto.
+Usa la rama `vulnerable` para ver la versión vulnerable del proyecto.
 ```sh
-git checkout main
+git checkout vulnerable
 ```
 
 Cambia a la rama de cada riesgo del Top 10, para ver su solución.
