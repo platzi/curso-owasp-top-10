@@ -19,6 +19,7 @@ A continuación encontrarás toda la información necesaria para utilizar este p
 4. [Comandos de docker](#comandos-de-docker)
 5. [Software de trabajo](#software-de-trabajo)
 6. [Recursos adicionales](#recursos-adicionales)
+    - [Clases relacionadas](#clases-relacionadas)
     - [Acceso a grafana](#acceso-a-grafana)
     - [Usuarios de la aplicación](#usuarios-de-la-aplicación)
 7. [Créditos](#créditos)
@@ -164,6 +165,7 @@ Recuerda terminar el proceso de docker y elimines los volúmenes cada vez que ca
 </details>
 
 ## Recursos adicionales
+### Clases relacionadas
 <details>
     <summary>A continuación puedes encontrar las clases de los 10 retos del proyecto relacionados al OWASP Top 10.</summary>
     <a href="https://platzi.com/clases/9342-owasp-top-10/68372-broken-access-control/" target="_blank">A01:2021 - Broken Access Control</a></br>
