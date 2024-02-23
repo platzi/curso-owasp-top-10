@@ -145,7 +145,7 @@ docker compose down --volumes
 
 __IMPORTANTE__
 
-Recuerda terminar el proceso de docker y elimines los volúmenes cada vez que cambies de rama para generar un entorno limpio desde cero.
+Recuerda terminar el proceso de docker y eliminar los volúmenes cada vez que cambies de rama para generar un entorno limpio desde cero.
 
 ## Software de trabajo
 - VS Code
