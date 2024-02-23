@@ -156,17 +156,14 @@ Recuerda terminar el proceso de docker y elimines los volúmenes cada vez que ca
 - DirBuster
 - NodeJS (para la clase de npm audit)
 
-Aquí te comparto una lista de tutoriales para instalar tus herramientas de pentesting
-
-[Tutorial de instalación de Docker](https://platzi.com/new-home/clases/8781-docker-fundamentos/66589-instalacion-de-docker/)
-
-[Tutorial de instalación de Burp Suite en Windows](https://platzi.com/blog/como-instalar-burp-suite-en-windows)
-
-[Tutorial de instalación de Burp Suite en Linux](https://platzi.com/blog/como-instalar-burp-suite-en-linux)
-
-[Tutorial de instalación de Burp Suite en MacOS](https://platzi.com/blog/como-instalar-burp-suite-en-macos)
-
-[Tutorial de instalación de DirBuster](https://platzi.com/blog/como-instalar-dirbuster)
+<details>
+    <summary>Aquí te comparto una lista de tutoriales para instalar tus herramientas de pentesting</summary>
+    <a href="https://platzi.com/new-home/clases/8781-docker-fundamentos/66589-instalacion-de-docker/" target="_blank">Tutorial de instalación de Docker</a>
+    <a href="https://platzi.com/blog/como-instalar-burp-suite-en-windows" target="_blank">Tutorial de instalación de Burp Suite en Windows</a>
+    <a href="https://platzi.com/blog/como-instalar-burp-suite-en-linux" target="_blank">Tutorial de instalación de Burp Suite en Linux</a>
+    <a href="https://platzi.com/blog/como-instalar-burp-suite-en-macos" target="_blank">Tutorial de instalación de Burp Suite en MacOS</a>
+    <a href="https://platzi.com/blog/como-instalar-dirbuster" target="_blank">Tutorial de instalación de DirBuster</a>
+</details>
 
 ## Retos
 A continuación puedes encontrar la documentación de los 10 retos del proyecto relacionados al OWASP Top 10.
