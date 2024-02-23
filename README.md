@@ -1,6 +1,6 @@
 # Curso de OWASP Top 10: Vulnerabilidades en Aplicaciones
 ## Proyecto de Aplicación Web Vulnerable al OWASP Top 10:2021
-Esta es la documentación del proyecto de aplicación vulnerable para el [Curso de OWASP Top 10: Vulnerabilidades en Aplicaciones](https://platzi.com/cursos/owasp-top-10) de [Platzi](https://platzi.com/ciberseguridad).
+Esta es la documentación del proyecto de aplicación vulnerable para el Curso de OWASP Top 10: Vulnerabilidades en Aplicaciones de Platzi.
 
 A continuación encontrarás toda la información necesaria para utilizar este proyecto.
 
