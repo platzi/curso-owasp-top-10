@@ -9,6 +9,25 @@ A continuación encontrarás toda la información necesaria para utilizar este p
 2) Agregar alias localbox al localhost
 3) Agregar certificado CA al navegador
 
+## Índice
+
+1. [Curso de OWASP Top 10: Vulnerabilidades en Aplicaciones](#curso-de-owasp-top-10-vulnerabilidades-en-aplicaciones)
+2. [Pasos de instalación](#pasos-de-instalación)
+    1. [Paso 1: Clonar el repositorio](#paso-1-clonar-el-repositorio)
+    2. [Paso 2: Agregar el alias "localbox" a tu localhost](#paso-2-agregar-el-alias-localbox-a-tu-localhost)
+        - [Agregar el alias en sistemas tipo UNIX (MacOS y Linux)](#agregar-el-alias-en-sistemas-tipo-unix-macos-y-linux)
+        - [Agregar el alias en Windows](#agregar-el-alias-en-windows)
+        - [Resultado final](#resultado-final)
+    3. [Paso 3: Agrega el certificado CA al navegador](#paso-3-agrega-el-certificado-ca-al-navegador)
+3. [Uso del repositorio](#uso-del-repositorio)
+4. [Comandos de docker](#comandos-de-docker)
+5. [Software de trabajo](#software-de-trabajo)
+6. [Retos](#retos)
+7. [Recursos adicionales](#recursos-adicionales)
+    - [Acceso a grafana](#acceso-a-grafana)
+    - [Usuarios de la aplicación](#usuarios-de-la-aplicación)
+8. [Créditos](#créditos)
+
 ### Paso 1: Clonar el repositorio
 Para clonar el repositorio simplemente muevete a tu directorio de trabajo en la terminal y ejecuta el comando.
 ```
