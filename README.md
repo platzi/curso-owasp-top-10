@@ -14,7 +14,7 @@ A continuación encontrarás toda la información necesaria para utilizar este p
 1. [Curso de OWASP Top 10: Vulnerabilidades en Aplicaciones](#curso-de-owasp-top-10-vulnerabilidades-en-aplicaciones)
 2. [Pasos de instalación](#pasos-de-instalación)
     1. [Paso 1: Clonar el repositorio](#paso-1-clonar-el-repositorio)
-    2. [Paso 2: Agregar el alias "localbox" a tu localhost](#paso-2-agregar-el-alias-localbox-a-tu-localhost)
+    2. [Paso 2: Agregar el alias localbox a tu localhost](#paso-2-agregar-el-alias-localbox-a-tu-localhost)
         - [Agregar el alias en sistemas tipo UNIX (MacOS y Linux)](#agregar-el-alias-en-sistemas-tipo-unix-macos-y-linux)
         - [Agregar el alias en Windows](#agregar-el-alias-en-windows)
         - [Resultado final](#resultado-final)
@@ -36,7 +36,7 @@ git clone https://github.com/platzi/curso-owasp-top-10 OWASPTop10
 
 Se creará el directorio OWASPTop10, en el que podrás trabajar el proyecto.
 
-### Paso 2: Agrega el alias "localbox" a tu localhost
+### Paso 2: Agrega el alias localbox a tu localhost
 Para poder utilizar los certificados SSL se necesita que coincidan con el nombre de dominio registrado, por lo tanto es necesario indicarle a nuestra computadora ese dominio y acceder al proyecto desde esa dirección.
 
 #### Agregar el alias en sistemas tipo UNIX (MacOS y Linux)
