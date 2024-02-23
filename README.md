@@ -157,10 +157,10 @@ Recuerda terminar el proceso de docker y elimines los volúmenes cada vez que ca
 
 <details>
     <summary>Aquí te comparto una lista de tutoriales para instalar tus herramientas de pentesting</summary>
-    <a href="https://platzi.com/new-home/clases/8781-docker-fundamentos/66589-instalacion-de-docker/" target="_blank">Tutorial de instalación de Docker</a>
-    <a href="https://platzi.com/blog/como-instalar-burp-suite-en-windows" target="_blank">Tutorial de instalación de Burp Suite en Windows</a>
-    <a href="https://platzi.com/blog/como-instalar-burp-suite-en-linux" target="_blank">Tutorial de instalación de Burp Suite en Linux</a>
-    <a href="https://platzi.com/blog/como-instalar-burp-suite-en-macos" target="_blank">Tutorial de instalación de Burp Suite en MacOS</a>
+    <a href="https://platzi.com/new-home/clases/8781-docker-fundamentos/66589-instalacion-de-docker/" target="_blank">Tutorial de instalación de Docker</a></br>
+    <a href="https://platzi.com/blog/como-instalar-burp-suite-en-windows" target="_blank">Tutorial de instalación de Burp Suite en Windows</a></br>
+    <a href="https://platzi.com/blog/como-instalar-burp-suite-en-linux" target="_blank">Tutorial de instalación de Burp Suite en Linux</a></br>
+    <a href="https://platzi.com/blog/como-instalar-burp-suite-en-macos" target="_blank">Tutorial de instalación de Burp Suite en MacOS</a></br>
     <a href="https://platzi.com/blog/como-instalar-dirbuster" target="_blank">Tutorial de instalación de DirBuster</a>
 </details>
 
