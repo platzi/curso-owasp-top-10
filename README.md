@@ -10,7 +10,6 @@ A continuación encontrarás toda la información necesaria para utilizar este p
 3) Agregar certificado CA al navegador
 
 ## Índice
-
 1. [Curso de OWASP Top 10: Vulnerabilidades en Aplicaciones](#curso-de-owasp-top-10-vulnerabilidades-en-aplicaciones)
 2. [Pasos de instalación](#pasos-de-instalación)
     1. [Paso 1: Clonar el repositorio](#paso-1-clonar-el-repositorio)
@@ -68,30 +67,36 @@ Ahora si, puedes utilizar el alias ingresando a http://localbox/ en lugar de htt
 Para poder utilizar los certificados SSL del proyecto sin ninguna alerta o error del navegador, es necesario agregar el certificado `RootCA.crt`, que viene en la carpeta `CA` del repositorio, en las configuraciones del navegador.
 
 #### Instrucciones para agregar el certificado CA a tu navegador
-**Chrome:**
-1. Abre Chrome y ve a la configuración haciendo clic en el icono de tres puntos en la esquina superior derecha.
-2. En el menú desplegable, selecciona "Configuración".
-3. Desplázate hacia abajo y haz clic en "Avanzado" para mostrar opciones adicionales.
-4. En la sección "Privacidad y seguridad", haz clic en "Configuración de contenido".
-5. Desplázate hacia abajo hasta encontrar la sección "Certificados" y haz clic en "Administrar certificados".
-6. En la ventana que se abre, selecciona la pestaña "Autoridades", luego haz clic en "Importar" y sigue el asistente de importación para seleccionar el archivo `RootCA.crt` y agregarlo como una Autoridad de Certificación de Confianza.
+<details>
+<summary>Agregar el certificado en Chrome</summary>
+    1. Abre Chrome y ve a la configuración haciendo clic en el icono de tres puntos en la esquina superior derecha.</br>
+    2. En el menú desplegable, selecciona "Configuración".</br>
+    3. Desplázate hacia abajo y haz clic en "Avanzado" para mostrar opciones adicionales.</br>
+    4. En la sección "Privacidad y seguridad", haz clic en "Configuración de contenido".</br>
+    5. Desplázate hacia abajo hasta encontrar la sección "Certificados" y haz clic en "Administrar certificados".</br>
+    6. En la ventana que se abre, selecciona la pestaña "Autoridades", luego haz clic en "Importar" y sigue el asistente de importación para seleccionar el archivo `RootCA.crt` y agregarlo como una Autoridad de Certificación de Confianza.
+</details>
 
-**Firefox:**
-1. Abre Firefox y ve a la configuración haciendo clic en el menú de tres líneas en la esquina superior derecha.
-2. Selecciona "Preferencias" en el menú desplegable.
-3. En el panel izquierdo, selecciona "Privacidad y seguridad".
-4. Desplázate hacia abajo hasta encontrar la sección "Certificados" y haz clic en "Ver certificados".
-5. En la ventana que se abre, selecciona la pestaña "Autoridades" y haz clic en "Importar".
-6. Sigue el asistente de importación para seleccionar el archivo `RootCA.crt` y agregarlo como una Autoridad de Certificación de Confianza.
+<details>
+    <summary>Agregar el certificado en Firefox</summary>
+    1. Abre Firefox y ve a la configuración haciendo clic en el menú de tres líneas en la esquina superior derecha.</br>
+    2. Selecciona "Preferencias" en el menú desplegable.</br>
+    3. En el panel izquierdo, selecciona "Privacidad y seguridad".</br>
+    4. Desplázate hacia abajo hasta encontrar la sección "Certificados" y haz clic en "Ver certificados".</br>
+    5. En la ventana que se abre, selecciona la pestaña "Autoridades" y haz clic en "Importar".</br>
+    6. Sigue el asistente de importación para seleccionar el archivo `RootCA.crt` y agregarlo como una Autoridad de Certificación de Confianza.
+</details>
 
-**Safari:**
-1. Abre Safari y ve al menú "Safari" en la barra de menú superior.
-2. Selecciona "Preferencias" en el menú desplegable.
-3. Ve a la pestaña "Avanzado".
-4. Marca la casilla "Mostrar menú Desarrollo en la barra de menús".
-5. Ahora, en la barra de menú superior, aparecerá un nuevo menú "Desarrollo". Haz clic en él y selecciona "Preferencias de certificados".
-6. En la ventana que se abre, selecciona la pestaña "Autoridades" y haz clic en "Importar".
-7. Sigue el asistente de importación para seleccionar el archivo `RootCA.crt` y agregarlo como una Autoridad de Certificación de Confianza.
+<details>
+    <summary>Agregar el certificado en Safari</summary>
+    1. Abre Safari y ve al menú "Safari" en la barra de menú superior.</br>
+    2. Selecciona "Preferencias" en el menú desplegable.</br>
+    3. Ve a la pestaña "Avanzado".</br>
+    4. Marca la casilla "Mostrar menú Desarrollo en la barra de menús".</br>
+    5. Ahora, en la barra de menú superior, aparecerá un nuevo menú "Desarrollo". Haz clic en él y selecciona "Preferencias de certificados".</br>
+    6. En la ventana que se abre, selecciona la pestaña "Autoridades" y haz clic en "Importar".</br>
+    7. Sigue el asistente de importación para seleccionar el archivo `RootCA.crt` y agregarlo como una Autoridad de Certificación de Confianza.
+</details>
 
 ## Uso del repositorio
 Usa la rama `main` para ver la versión vulnerable del proyecto.
