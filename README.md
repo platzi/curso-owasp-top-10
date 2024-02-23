@@ -165,27 +165,27 @@ Recuerda terminar el proceso de docker y elimines los volúmenes cada vez que ca
 </details>
 
 ## Retos
-A continuación puedes encontrar la documentación de los 10 retos del proyecto relacionados al OWASP Top 10.
+A continuación puedes encontrar las clases de los 10 retos del proyecto relacionados al OWASP Top 10.
 
-[A01:2021 - Broken Access Control](docs/A01-BrokenAccessControl.md)
+[A01:2021 - Broken Access Control](https://platzi.com/clases/9342-owasp-top-10/68372-broken-access-control/)
 
-[A02:2021 - Cryptographic Failures](docs/A02-CryptographicFailures.md)
+[A02:2021 - Cryptographic Failures](https://platzi.com/clases/9342-owasp-top-10/68373-cryptographic-failures/)
 
-[A03:2021 - Injection](docs/A03-Injection.md)
+[A03:2021 - Injection](https://platzi.com/clases/9342-owasp-top-10/68374-injection/)
 
-[A04:2021 - Insecure Design](docs/A04-InsecureDesign.md)
+[A04:2021 - Insecure Design](https://platzi.com/clases/9342-owasp-top-10/68375-insecure-design/)
 
-[A05:2021 - Security Misconfiguration](docs/A05-SecurityMisconfiguration.md)
+[A05:2021 - Security Misconfiguration](https://platzi.com/clases/9342-owasp-top-10/68376-security-misconfiguration/)
 
-[A06:2021 - Vulnerable And Outdated Components](docs/A06-VulnerableAndOutdatedComponents.md)
+[A06:2021 - Vulnerable And Outdated Components](https://platzi.com/clases/9342-owasp-top-10/68377-vulnerable-and-outdated-components/)
 
-[A07:2021 - Identification And Authentication Failures](docs/A07-IdentificationAndAuthenticationFailures.md)
+[A07:2021 - Identification And Authentication Failures](https://platzi.com/clases/9342-owasp-top-10/68378-identification-and-authentication-failures/)
 
-[A08:2021 - Software And Data Integrity Failures](docs/A08-SoftwareAndDataIntegrityFailures.md)
+[A08:2021 - Software And Data Integrity Failures](https://platzi.com/clases/9342-owasp-top-10/68368-software-and-data-integrity-failures/)
 
-[A09:2021 - Security Logging And Monitoring Failures](docs/A09-SecurityLoggingAndMonitoringFailures.md)
+[A09:2021 - Security Logging And Monitoring Failures](https://platzi.com/clases/9342-owasp-top-10/68369-security-logging-and-monitoring-failures/)
 
-[A10:2021 - Server-Side Request Forgery](docs/A10-ServerSideRequestForgery.md)
+[A10:2021 - Server-Side Request Forgery](https://platzi.com/clases/9342-owasp-top-10/68370-server-side-request-forgery/)
 
 ## Recursos adicionales
 ### Acceso a grafana
