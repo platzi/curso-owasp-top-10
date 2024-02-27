@@ -1,6 +1,7 @@
 # Curso de OWASP Top 10: Riesgos en Aplicaciones
 ## Introducción
 Esta es la documentación del proyecto de aplicación vulnerable para el Curso de OWASP Top 10: Riesgos en Aplicaciones de Platzi.
+
 A continuación encontrarás toda la información necesaria para utilizar este proyecto.
 
 ## Índice
